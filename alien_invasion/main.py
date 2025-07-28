@@ -92,6 +92,7 @@ class AlienInvasion:
     elif event.key == pygame.K_SPACE:
       self._fire_bullet()
     elif event.key == pygame.K_q:
+      self.scoreboard.check_high_score()
       sys.exit()
 
   def _check_keyup_events(self, event):
@@ -157,8 +158,8 @@ class AlienInvasion:
      if collisions:
        for aliens in collisions.values():
          self.stats.score += self.settings.alien_points * len(aliens)
-       self.scoreboard.prep_score()
        self.scoreboard.check_high_score()
+       self.scoreboard.prep_score()
 
      if not self.aliens:
       self.bullets.empty()
