@@ -2,11 +2,11 @@ import json
 from plotly.graph_objs import Scattergeo, Layout
 from plotly import offline
 
-filename = 'data/last_month_earthquakes.json'
+filename = '../../data/last_month_earthquakes.json'
 with open(filename) as f:
   all_eq_data = json.load(f)
 
-readable_file = 'data/readable_eq_data.json'
+readable_file = '../../data/readable_eq_data.json'
 with open(readable_file, 'w') as f:
   json.dump(all_eq_data, f, indent=4)
 
